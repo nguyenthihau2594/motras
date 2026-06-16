@@ -1,0 +1,336 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.footer {
+  @include bg-cover("#{$img-common}/footer_bg.jpg");
+  color: $color-white;
+
+  &-inner {
+    max-width: $inner-width;
+    margin: 0 auto;
+    padding: 100px 0 80px;
+
+    @include respond-tablet {
+      padding: 100px 20px 80px;
+    }
+  }
+
+  &-title {
+    display: block;
+    margin-bottom: 29px;
+    font-size: 68px;
+    font-weight: 700;
+    letter-spacing: 2.04px;
+    line-height: 1;
+
+    @include respond-tablet {
+      font-size: 50px;
+    }
+  }
+
+  &-sub-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 100%;
+  }
+
+  &-site {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 80px;
+
+    @include respond-tablet {
+      flex-direction: column;
+      margin-top: 40px;
+    }
+
+    &-select-wrap {
+      display: contents;
+
+      @include respond-tablet {
+        display: block;
+        position: relative;
+        width: 100%;
+      }
+    }
+
+    &-select {
+      display: none;
+
+      @include respond-tablet {
+        @include flex-between;
+        width: 100%;
+        height: 48px;
+        padding: 0 20px;
+        border: 1px solid $color-white;
+        border-radius: 30px;
+        background-color: transparent;
+        font-size: 14px;
+        font-weight: 300;
+        color: $color-white;
+        line-height: 100%;
+        cursor: pointer;
+      }
+
+      &-label {
+        display: block;
+      }
+
+      &-icon {
+        @include toggle-icon($color-white);
+      }
+    }
+
+    &.is-open &-select-icon::after {
+      opacity: 0;
+    }
+
+    .tab-list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 350px;
+
+      @include respond-tablet {
+        display: none;
+        overflow: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+        padding: 16px 20px;
+        border-radius: 20px;
+        background-color: $color-black-80;
+        box-sizing: border-box;
+      }
+    }
+
+    &.is-open .footer-site-select-wrap .tab-list {
+      @include respond-tablet {
+        display: flex;
+      }
+    }
+
+    .tab-item {
+      width: 50%;
+      margin-bottom: 18px;
+
+      @include respond-tablet {
+        width: 50%;
+        margin-bottom: 0;
+      }
+    }
+
+    .tab-btn {
+      display: block;
+      width: 50%;
+      border: none;
+      background: none;
+      font-size: 18px;
+      font-weight: 400;
+      color: $color-white-60;
+      line-height: 100%;
+      text-align: left;
+      cursor: pointer;
+
+      @include respond-tablet {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 14px;
+      }
+
+      &.is-active,
+      &:hover {
+        color: $color-white;
+      }
+    }
+
+    .tab-contents {
+      width: 440px;
+
+      @include respond-tablet {
+        width: 100%;
+        margin-top: 24px;
+      }
+    }
+
+    .tab-panel {
+      display: none;
+
+      &.is-active {
+        display: block;
+      }
+    }
+
+    .tab-contents-title {
+      display: block;
+      margin-bottom: 50px;
+      font-size: 28px;
+      font-weight: 400;
+
+      @include respond-tablet {
+        font-size: 20px;
+      }
+    }
+
+    .factory-card-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 50px;
+    }
+
+    .factory-card-badge {
+      @include flex-center;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 23px;
+      border-radius: 100%;
+      background-color: $color-black;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .factory-card-list {
+      display: flex;
+      flex-direction: column;
+      font-size: 18px;
+      font-weight: 300;
+      gap: 5px;
+
+      @include respond-tablet {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: $inner-width;
+    margin: 0 auto;
+    padding: 50px 0 30px;
+    border-top: 1px solid $color-footer-border;
+
+    @include respond-tablet {
+      flex-direction: column;
+      padding: 50px 20px 30px;
+    }
+  }
+
+  &-info {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.625;
+  }
+
+  &-bottom-right {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+
+    @include respond-tablet {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      gap: 0;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    gap: 40px;
+
+    @include respond-tablet {
+      justify-content: center;
+      width: 100%;
+      margin: 20px 0;
+      gap: 20px;
+    }
+
+    &-link {
+      margin-left: 39px;
+      font-size: 16px;
+      font-weight: 300;
+      color: $color-white;
+      line-height: 100%;
+
+      @include respond-tablet {
+        margin-left: 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-family {
+    position: relative;
+
+    @include respond-tablet {
+      width: 100%;
+    }
+
+    &.is-open .footer-family-icon::after {
+      opacity: 0;
+    }
+
+    &-btn {
+      @include flex-between;
+      width: 240px;
+      height: 48px;
+      padding: 0 20px;
+      border: none;
+      background-color: $color-black-80;
+      font-size: 14px;
+      font-weight: 300;
+      color: $color-white;
+      line-height: 100%;
+      cursor: pointer;
+
+      @include respond-tablet {
+        width: 100%;
+      }
+    }
+
+    &-icon {
+      @include toggle-icon($color-white);
+    }
+
+    &-info {
+      overflow: hidden;
+      overflow-y: auto;
+      position: absolute;
+      bottom: 100%;
+      width: 100%;
+      height: 0;
+      padding: 0 18px;
+      background-color: $color-black-80;
+    }
+
+    &-title {
+      display: block;
+      margin-top: 20px;
+    }
+
+    &-list {
+      margin-top: 10px;
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-item:not(:first-child) {
+      margin-top: 5px;
+    }
+
+    &-link {
+      font-size: 14px;
+      color: #ededed;
+    }
+  }
+}

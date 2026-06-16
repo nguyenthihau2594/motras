@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as *;
+
+@font-face {
+  font-style: normal;
+  font-family: $font-family;
+  src: url($font-path) format("woff");
+}

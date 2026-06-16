@@ -1,0 +1,115 @@
+@use "sass:math";
+@use "variables" as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin bg-cover($url) {
+  background: url($url) center no-repeat;
+  background-size: cover;
+}
+
+@mixin object-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin btn-outline($color: $color-white, $radius: 10px) {
+  display: block;
+  padding: 14px 33px;
+  border: 1px solid $color;
+  border-radius: $radius;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: $color;
+  line-height: 1;
+}
+
+@mixin btn-link($color: $color-black) {
+  @include flex-center;
+  width: 170px;
+  height: 47px;
+  border: 1px solid $color;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $color;
+  transition: all $transition-fast;
+}
+
+@mixin toggle-icon($color: $color-black) {
+  display: block;
+  position: relative;
+  width: 14px;
+  height: 14px;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: $color;
+    transform: translateY(-50%);
+    content: "";
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: $color;
+    opacity: 1;
+    transition: 0.2s opacity;
+    transform: translateX(-50%);
+    content: "";
+  }
+}
+
+@mixin clip-fixed {
+  clip: rect(0, auto, auto, 0);
+  clip-path: fill-box;
+}
+
+@mixin respond-tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin respond-desktop {
+  @media (min-width: #{$breakpoint-tablet + 1px}) {
+    @content;
+  }
+}
+
+@function vw-md($px, $base: $desktop-md-base) {
+  @return math.div($px * 100, $base) * 1vw;
+}
+
+@mixin respond-desktop-md {
+  @media (min-width: $breakpoint-desktop-md-min) and (max-width: $breakpoint-desktop-md-max) {
+    @content;
+  }
+}

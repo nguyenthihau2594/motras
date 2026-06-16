@@ -1,0 +1,57 @@
+// Colors
+$color-primary: #00267b;
+$color-primary-dark: #092162;
+$color-primary-darker: #112a7f;
+$color-navy: #091b41;
+$color-accent: #2a62ff;
+$color-accent-light: #6790e2;
+
+$color-white: #fff;
+$color-black: #000;
+$color-text: #141414;
+$color-text-muted: #666;
+$color-text-light: #777;
+$color-text-subtle: #ccc;
+$color-border: #eee;
+$color-border-light: #ddd;
+$color-scrollbar: #dbdbdb;
+
+$color-text-animate: rgba(20, 20, 20, 0.2);
+$color-white-60: rgba(255, 255, 255, 0.6);
+$color-black-80: rgba(0, 0, 0, 0.8);
+$color-footer-border: #fff6;
+
+// Typography
+$font-family: "Pretendard", sans-serif;
+$font-path: "../fonts/Pretendard-Regular.woff";
+
+// Layout
+$inner-width: 1460px;
+$inner-width-sm: 1400px;
+$header-height: 150px;
+$header-height-mobile: 70px;
+$side-menu-width: 330px;
+$gnb-item-width: 160px;
+
+// Z-index
+$z-header: 99;
+$z-dimmed: 9;
+$z-side-menu: 10;
+
+// Transitions
+$transition-default: 0.7s;
+$transition-fast: 0.3s;
+$transition-side-menu: 0.5s;
+$transition-ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+$transition-side-menu-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+// Breakpoints
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop-md-min: 1025px;
+$breakpoint-desktop-md-max: 1500px;
+$desktop-md-base: 1500;
+
+// Asset paths (relative to assets/css/style.css)
+$img-common: "../images/common";
+$img-main: "../images/main";
+$img-sub: "../images/sub";

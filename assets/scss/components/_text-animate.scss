@@ -1,0 +1,28 @@
+﻿@use "../abstracts/variables" as *;
+
+.text-animate {
+  font-weight: 700;
+  color: $color-text-animate;
+
+  .highlight {
+    display: inline-block;
+    position: relative;
+
+    &.is-active::before {
+      width: 100%;
+    }
+
+    &::before {
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      color: $color-primary;
+      white-space: nowrap;
+      transition: width 0.5s;
+      content: attr(title);
+    }
+  }
+}

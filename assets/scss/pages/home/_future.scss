@@ -1,0 +1,168 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.future {
+  .future-title-area {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    padding-top: 180px;
+
+    @include respond-tablet {
+      height: auto;
+      padding-top: 100px;
+    }
+  }
+
+  .future-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+
+    @include respond-tablet {
+      position: relative;
+      top: auto;
+      left: auto;
+      z-index: 1;
+      height: auto;
+      opacity: 1;
+      transform: none;
+    }
+
+    .img {
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include respond-tablet {
+        overflow: hidden;
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        margin: 30px 20px 0;
+        border-radius: 20px;
+        transform: none;
+      }
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+
+      @include respond-tablet {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .future-title {
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    font-size: 99px;
+    font-weight: 700;
+    letter-spacing: -2.97px;
+    line-height: 100%;
+    opacity: 0;
+    transform: translateX(-50%);
+
+    @include respond-tablet {
+      position: static;
+      font-size: 40px;
+      text-align: center;
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  .sub-title {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+    opacity: 0;
+
+    @include respond-tablet {
+      font-size: 15px;
+      text-align: center;
+      margin-bottom: 12px;
+      opacity: 1;
+    }
+  }
+
+  .future-content {
+    position: relative;
+    z-index: 2;
+    margin-top: -50px;
+    padding-left: 450px;
+
+    @include respond-tablet {
+      margin-top: 100px;
+      padding: 0 20px;
+    }
+  }
+
+  .future-desc {
+    @include respond-tablet {
+      text-align: center;
+    }
+  }
+
+  .btn-recruit {
+    @include btn-link;
+    margin-top: 33px;
+
+    @include respond-tablet {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .recruit-list {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+
+    @include respond-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+
+  .recruit-item {
+    text-align: center;
+
+    &:not(:first-child) {
+      margin-left: 70px;
+    }
+
+    @include respond-tablet {
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .recruit-title {
+    @include respond-tablet {
+      font-size: 13px;
+    }
+  }
+}

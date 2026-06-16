@@ -1,0 +1,26 @@
+// Entry SCSS — compile: npm run build:css → assets/css/style.css
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+@use "base/font-face";
+@use "base/reset";
+@use "base/common";
+
+@use "components/text-animate";
+@use "components/dimmed";
+
+@use "layout/header";
+@use "layout/footer";
+@use "layout/responsive";
+
+@use "pages/home/kv";
+@use "pages/home/product";
+@use "pages/home/esg";
+@use "pages/home/future";
+@use "pages/home/story";
+
+@use "pages/about";
+@use "pages/product-page";
+@use "pages/sustainability";
+
+@use "layout/responsive-desktop-md";

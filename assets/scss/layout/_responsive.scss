@@ -1,0 +1,119 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+@include respond-desktop {
+  .header .header-side {
+    display: none;
+  }
+}
+
+@include respond-tablet {
+  .header {
+    &.is-open,
+    &.is-white {
+      .logo-link {
+        width: 115px;
+        height: 14px;
+        background-size: cover;
+      }
+
+      .btn-menu .line {
+        background: $color-black;
+      }
+    }
+
+    .header-inner {
+      height: $header-height-mobile;
+      padding: 0 20px;
+    }
+
+    .logo-link {
+      width: 115px;
+      height: 14px;
+      background-size: cover;
+    }
+
+    .gnb,
+    .header-sgnb {
+      display: none;
+    }
+
+    .header-right {
+      gap: 10px;
+    }
+
+    .btn-contact {
+      width: 87px;
+      height: 32px;
+      font-size: 12px;
+    }
+
+    .logo-hd {
+      display: none;
+    }
+
+    .btn-menu {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: none;
+
+      &.is-open .line {
+        &:nth-child(1) {
+          transform: translateY(6px) rotateZ(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: translateY(-6px) rotateZ(-45deg);
+        }
+      }
+
+      .line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        margin: 10px 0;
+        background: $color-white;
+        transform: translateY(0) rotateZ(0deg);
+      }
+    }
+  }
+
+  .header .header-side {
+    display: block;
+    pointer-events: auto;
+    transform: translate3d(100%, 0, 0);
+    transition: transform $transition-side-menu $transition-side-menu-ease;
+    will-change: transform;
+
+    &.is-open {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  body.is-menu-open {
+    overflow: hidden;
+  }
+
+  .header .dimmed {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity $transition-side-menu $transition-side-menu-ease,
+      visibility $transition-side-menu $transition-side-menu-ease;
+
+    &.is-open {
+      opacity: 0.7;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  .footer-bottom,
+  .footer-bottom-right {
+    display: block;
+  }
+}

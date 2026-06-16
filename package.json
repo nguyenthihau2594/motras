@@ -1,0 +1,16 @@
+{
+  "name": "motras",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "sass assets/scss/style.scss assets/css/style.css --style=expanded --no-source-map",
+    "watch:css": "sass assets/scss/style.scss assets/css/style.css --watch --style=expanded --no-source-map",
+    "serve": "npx serve -l 5501",
+    "dev": "npm run build:css && concurrently -k \"npm:watch:css\" \"npm:serve\"",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "sass": "^1.77.0"
+  }
+}

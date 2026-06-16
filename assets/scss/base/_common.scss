@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.main {
+  overflow: hidden;
+}
+
+.inner {
+  max-width: $inner-width;
+  margin: 0 auto;
+
+  @include respond-tablet {
+    padding: 0 20px;
+  }
+}
